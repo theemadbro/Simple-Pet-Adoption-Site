@@ -1,0 +1,20 @@
+table {
+	border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    word-break: break-all;
+}
+th, td {
+	padding: 5px 40px 5px 5px;
+	text-align: center;
+}
+th {
+	text-align: left;
+}
+button {
+	padding: 10px;
+	margin-left: 35px;
+	text-align: center;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}

@@ -1,0 +1,86 @@
+<a href="/pets" [routerLink]="['/pets']">Home</a>
+<br><br>
+<h4>Make a New Author!</h4>
+<div class="holder">
+	<!-- <p> {{ newpet | json }} </p> -->
+	<form (submit)="newPet()"><table>
+		<tr>
+			<td>Name:</td>
+			<td><input 
+				name="name"
+				type="text"
+				[(ngModel)]="newpet.name" 
+				#name="ngModel"
+				minlength="3"
+				required></td>
+			<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)">
+				<td class="error" *ngIf="name.errors.required">Name is required.</td>
+				<td class="error" *ngIf="name.errors.minlength">Name must be at least 3 characters long.</td>
+			</div> -->
+		</tr>
+		<tr>
+			<td>Type:</td>
+			<td><input 
+				name="type"
+				type="text"
+				[(ngModel)]="newpet.type" 
+				#name="ngModel"
+				minlength="3"
+				required></td>
+			<!-- <div *ngIf="type.invalid && (type.dirty || type.touched)">
+				<td class="error" *ngIf="type.errors.required">Name is required.</td>
+				<td class="error" *ngIf="type.errors.minlength">Name must be at least 3 characters long.</td>
+			</div> -->
+		</tr>
+		<tr>
+			<td>Description:</td>
+			<td><input 
+				name="desc"
+				type="text"
+				[(ngModel)]="newpet.desc" 
+				#name="ngModel"
+				minlength="3"
+				required></td>
+		</tr>
+		<tr>
+			<td>Skills:</td>
+		</tr>
+	</table>
+	<ul>
+		<table>
+			<tr>
+				<td>Skill 1:</td>
+				<td><input
+					name="skill1"
+					type="text" 
+					minlength="3"
+					[(ngModel)]="newpet.skills[0]"></td>
+			</tr>
+			<tr>
+				<td>Skill 2:</td>
+				<td><input
+					name="skill1"
+					type="text" 
+					minlength="3"
+					[(ngModel)]="newpet.skills[1]"></td>
+			</tr>
+			<tr>
+				<td>Skill 3:</td>
+				<td><input
+					name="skill1"
+					type="text" 
+					minlength="3"
+					[(ngModel)]="newpet.skills[2]"></td>
+			</tr>	
+		</table>
+	</ul>
+	<input class="act" type="submit" value="Add Pet">
+	<button class="act"(click)="goback()">Cancel</button>
+		
+	</form>
+</div>
+<div class="errorblock" *ngIf="errors.length > 0">
+	<ul>
+		<li *ngFor="let i of errors">{{i}}</li>
+	</ul>
+</div>

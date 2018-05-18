@@ -1,0 +1,25 @@
+<a href="/home" [routerLink]="['/pets']">Home</a>
+<div *ngIf="pet">
+	<h3>Details about {{pet.name}}</h3>
+	<table>
+		<tr>
+			<th>Pet Type:</th>
+			<td>{{pet.type}}</td>
+		</tr>
+		<tr>
+			<th>Description:</th>
+			<td>{{pet.description}}</td>
+		</tr>
+		<tr>
+			<th>Skills:</th>
+			<td><span *ngFor="let i of slist">{{i}}<br></span></td>
+		</tr>
+		<tr>
+			<th>Likes:</th>
+			<td>{{pet.likes}}</td>
+		</tr>
+	</table>
+	<button class="act"(click)="likepet()">Like this Pet</button>
+	<button class="act"(click)="deletePet()">Adopt This Pet!</button>
+
+</div>
